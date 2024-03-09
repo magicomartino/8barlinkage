@@ -78,8 +78,8 @@ for k=1:t_size
         r2*cos(theta2(k)), r3*cos(theta3(k)), 0, 0, 0, 0;
         0,0, r6*sin(theta6(k)), r7*sin(theta7(k)),0, 0;
         0,0, r6*cos(theta6(k)), r7*cos(theta7(k)),0, 0;
-        0, r11*sin(theta3(k)+pi), r9*sin(theta6(k)+alpha4), 0, r10*sin(theta10(k)), r11*sin(theta11(k));
-        0, r11*cos(theta3(k)+pi), r9*cos(theta6(k)+alpha4), 0, r10*cos(theta10(k)), r11*cos(theta11(k))];
+        0, r12*sin(theta3(k)+pi), r9*sin(theta6(k)+alpha4), 0, r10*sin(theta10(k)), r11*sin(theta11(k));
+        0, r12*cos(theta3(k)+pi), r9*cos(theta6(k)+alpha4), 0, r10*cos(theta10(k)), r11*cos(theta11(k))];
     
     B = [-r1*sin(theta1(k))*dtheta1(k);
          -r1*cos(theta1(k))*dtheta1(k);
@@ -166,10 +166,10 @@ index_vec = [1:delta:t_size]';
 % % This is done by plotting a diagonal from (x_left, y_bottom) to (x_right, y_top), setting the
 % % axes equal and saving the axes into "movie_axes", so that "movie_axes" can be used for further
 % % plots.
-x_left = -1.5*r13;
-y_bottom = -1.5*r10;
-x_right = r1+1.5*r13;
-y_top = 1.5*r10;
+x_left = -1.5*r1;
+y_bottom = -1.5*r2;
+x_right = r1+1.5*1;
+y_top = 1.5*r2;
 % 
 figure(10)
 hold on
@@ -206,7 +206,7 @@ for m=1:length(index_vec)
      F = K1 + r13*exp(j*(pi + theta11(index) +alpha5));
 
 
-     loop1 = [A B D A B C1 C2 H ];
+     loop1 = [A G H ];
 %      loop2 = [A D E1 I D E1 E2 G];
 %      loop3 = [A D I J K1 F J K1 K2 H];
     
