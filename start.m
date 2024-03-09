@@ -36,6 +36,7 @@ r9 = 127.89;
 r10 = 396.61;
 r11 = 91.05;
 r12 = 370;
+r13 = 200; %arbitrair
 alpha1 = 2.96;
 alpha2 = 0.24;
 alpha3 = -0.05; 
@@ -86,7 +87,7 @@ dtheta1=omega*A*cos(omega*t);
 ddtheta1=-omega^2*A*sin(omega*t);
 
 % calculation of the kinematics (see kin_4bar.m)
-[theta2, theta3,theta6, theta7, theta10, theta11, dtheta2, dtheta3, dtheta6, dtheta7, dtheta10, dtheta11] = kinematics_4bar(r1,r2,r3,r4,r5, r6, r7, r8, r9, r10, r11, r12, alpha1, alpha2, alpha3, alpha4, theta1,dtheta1, ddtheta1, theta2_init, theta3_init, theta6_init, theta7_init, theta10_init, theta11_init,t,fig_kin_4bar);
+[theta2, theta3,theta6, theta7, theta10, theta11, dtheta2, dtheta3, dtheta6, dtheta7, dtheta10, dtheta11] = kinematics_4bar(r1,r2,r3,r4,r5, r6, r7, r8, r9, r10, r11, r12, r13, alpha1, alpha2, alpha3, alpha4,alpha5, theta1,dtheta1, ddtheta1, theta2_init, theta3_init, theta6_init, theta7_init, theta10_init, theta11_init,t,fig_kin_4bar);
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

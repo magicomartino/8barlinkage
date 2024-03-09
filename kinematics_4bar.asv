@@ -166,10 +166,10 @@ index_vec = [1:delta:t_size]';
 % % This is done by plotting a diagonal from (x_left, y_bottom) to (x_right, y_top), setting the
 % % axes equal and saving the axes into "movie_axes", so that "movie_axes" can be used for further
 % % plots.
-x_left = -1.5*r13;
-y_bottom = -1.5*r10;
-x_right = r1+1.5*r13;
-y_top = 1.5*r10;
+x_left = -1.5*r2;
+y_bottom = -1.5*r4;
+x_right = r1+1.5*r4;
+y_top = 1.5*r4;
 % 
 figure(10)
 hold on
@@ -201,21 +201,21 @@ for m=1:length(index_vec)
    
      I = D + r9*exp(j*(theta6(index)-alpha4));
      J = I + r10*exp(j*theta10(index));
+     F = K + r13*exp(j*(pi + theta11(index) +alpha5));
      K1 = J + r11*exp(j*theta11(index));
      K2 = H - r12*exp(j*theta3(index));
-     F = K1 + r13*exp(j*(pi + theta11(index) +alpha5));
 
 
      loop1 = [A B D A B C1 C2 H ];
      loop2 = [A D E1 I D E1 E2 G];
-     loop3 = [A D I J K1 F J K1 K2 H];
+     loop3 = [A D I J K1 F K1 K2 H];
     
     figure(10)
     clf
     hold on
-    plot(real(loop1),imag(loop1),'-o')
-    plot(real(loop2),imag(loop2),'-o')
-    plot(real(loop3),imag(loop3),'-o')
+%     plot(real(loop1),imag(loop1),'-o')
+%     plot(real(loop2),imag(loop2),'-o')
+%     plot(real(loop3),imag(loop3),'-o')
     
     axis(movie_axes);     % set axes as in movie_axes
     Movie(m) = getframe;  % save frame to a variable Film
