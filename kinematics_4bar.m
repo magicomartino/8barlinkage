@@ -78,8 +78,8 @@ for k=1:t_size
         r2*cos(theta2(k)), r3*cos(theta3(k)), 0, 0, 0, 0;
         0,0, r6*sin(theta6(k)), r7*sin(theta7(k)),0, 0;
         0,0, r6*cos(theta6(k)), r7*cos(theta7(k)),0, 0;
-        0, r11*sin(theta3(k)+pi), r9*sin(theta6(k)-alpha4), 0, r10*sin(theta10(k)), r11*sin(theta11(k));
-        0, r11*cos(theta3(k)+pi), r9*cos(theta6(k)-alpha4), 0, r10*cos(theta10(k)), r11*cos(theta11(k))];
+        0, r11*sin(theta3(k)+pi), r9*sin(theta6(k)+alpha4), 0, r10*sin(theta10(k)), r11*sin(theta11(k));
+        0, r11*cos(theta3(k)+pi), r9*cos(theta6(k)+alpha4), 0, r10*cos(theta10(k)), r11*cos(theta11(k))];
     
     B = [-r1*sin(theta1(k))*dtheta1(k);
          -r1*cos(theta1(k))*dtheta1(k);
@@ -107,8 +107,8 @@ for k=1:t_size
         r2*cos(theta2(k)), r3*cos(theta3(k)), 0, 0, 0, 0;
         0, 0, r6*sin(theta6(k)), r7*sin(theta7(k)),  0, 0;
         0, 0, r6*cos(theta6(k)), r7*cos(theta7(k)),  0, 0;
-        0,-r12*sin(theta3(k)-pi),-r9*sin(theta6(k)-alpha4),0, -r10*sin(theta10(k)),-r11*sin(theta11(k));
-         0, r12*cos(theta3(k)-pi), r9*cos(theta6(k)-alpha4),0,  r10*cos(theta10(k)), r11*cos(theta11(k));];
+        0,-r12*sin(theta3(k)+pi),-r9*sin(theta6(k)+alpha4),0, -r10*sin(theta10(k)),-r11*sin(theta11(k));
+         0, r12*cos(theta3(k)+pi), r9*cos(theta6(k)+alpha4),0,  r10*cos(theta10(k)), r11*cos(theta11(k));];
 
 
         
@@ -207,15 +207,15 @@ for m=1:length(index_vec)
 
 
      loop1 = [A B D A B C1 C2 H ];
-     loop2 = [A D E1 I D E1 E2 G];
-     loop3 = [A D I J K1 F J K1 K2 H];
+%      loop2 = [A D E1 I D E1 E2 G];
+%      loop3 = [A D I J K1 F J K1 K2 H];
     
     figure(10)
     clf
     hold on
     plot(real(loop1),imag(loop1),'-o')
-    plot(real(loop2),imag(loop2),'-o')
-    plot(real(loop3),imag(loop3),'-o')
+%     plot(real(loop2),imag(loop2),'-o')
+%     plot(real(loop3),imag(loop3),'-o')
     
     axis(movie_axes);     % set axes as in movie_axes
     Movie(m) = getframe;  % save frame to a variable Film

@@ -65,14 +65,14 @@ alpha5 = 1.3675;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % position analysis
-theta2_init = 0.349066;
-theta3_init = 5.06;    % initial condition for first step of position analysis with fsolve (theta3 and theta4)
+theta2_init = 0.34;
+theta3_init = 4.88;    % initial condition for first step of position analysis with fsolve (theta3 and theta4)
                      % VERY IMPORTANT because it determines which branch of the mechanism you're in
-theta6_init = 5.75;
-theta7_init = 0.523;
+theta6_init = 5.24;
+theta7_init = 0.2;
 
-theta10_init = 5.6;
-theta11_init = 0.78; 
+theta10_init = 0;
+theta11_init = 0; 
 
 t_begin = 0;                   % start time of simulation
 t_end = 10;                    % end time of simulation
@@ -103,7 +103,7 @@ ddtheta1=-omega^2*A*sin(omega*t);
 % STEP 3. Movie
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-figure
-load fourbar_movie Movie
-movie(Movie)
+% figure
+% load fourbar_movie Movie
+% movie(Movie)
 
