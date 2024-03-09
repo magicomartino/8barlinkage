@@ -22,10 +22,8 @@ function F=loop_closure_eqs(theta_init,theta1,r1,r2,r3,r4,r5, r6, r7, r8, r9, r1
 theta2=theta_init(1);
 theta3=theta_init(2);
 
-
 theta6 = theta_init(3);
 theta7 = theta_init(4);
-
 
 theta10 = theta_init(5);
 theta11 = theta_init(6);
