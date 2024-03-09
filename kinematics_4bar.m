@@ -207,15 +207,15 @@ for m=1:length(index_vec)
 
 
      loop1 = [A B D A B C1 C2 H ];
-     loop2 = [A D E1 I D E1 E2 G];
-     loop3 = [A D I J K1 F J K1 K2 H];
+%      loop2 = [A D E1 I D E1 E2 G];
+%      loop3 = [A D I J K1 F J K1 K2 H];
     
     figure(10)
     clf
     hold on
     plot(real(loop1),imag(loop1),'-o')
-    plot(real(loop2),imag(loop2),'-o')
-    plot(real(loop3),imag(loop3),'-o')
+%     plot(real(loop2),imag(loop2),'-o')
+%     plot(real(loop3),imag(loop3),'-o')
     
     axis(movie_axes);     % set axes as in movie_axes
     Movie(m) = getframe;  % save frame to a variable Film
