@@ -20,7 +20,7 @@ close all
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % program data
-fig_kin_4bar = 0;       % draw figures of kinematic analysis if 1
+fig_kin_4bar = 1;       % draw figures of kinematic analysis if 1
 fig_dyn_4bar = 0;        % draw figures of dynamic analysis if 1
 
 % kinematic parameters (link lengths)
@@ -37,6 +37,7 @@ r10=8.3091;
 r11=2.9988;
 r12= 7.3620;
 r13 = 9.1835;
+
 alpha1 = 0.14166;
 alpha2 = 0.70548;
 alpha3 = 1.3367;

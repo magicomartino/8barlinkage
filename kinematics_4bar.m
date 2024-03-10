@@ -142,20 +142,13 @@ for k=1:t_size
     theta11_init = theta11(k)+ Ts*dtheta11(k);
     
     
-end % loop over positions
-
-
+end 
 
 % *** create movie ***
 
-% % point P = fixed 
-% P = 0;
-% % point S = fixed
-% S = r1*exp(j*theta1);
-
 A=0;
-H = r4*exp(j*alpha1);
-G = -r8*exp(j*(pi + alpha2));
+H = r4*exp(1j*alpha1);
+G = -r8*exp(1j*(pi + alpha2));
 
 % % define which positions we want as frames in our movie
 frames = 40;    % number of frames in movie
@@ -167,9 +160,9 @@ index_vec = [1:delta:t_size]';
 % % axes equal and saving the axes into "movie_axes", so that "movie_axes" can be used for further
 % % plots.
 x_left = -1.5*r13;
-y_bottom = -1.5*r10;
+y_bottom = -2*r10;
 x_right = r1+1.5*r13;
-y_top = 1.5*r10;
+y_top = 1*r10;
 % 
 figure(10)
 hold on
@@ -180,16 +173,6 @@ movie_axes = axis;   %save current axes into movie_axes
 % % draw and save movie frame
 for m=1:length(index_vec)
      index = index_vec(m);
-%     Q = P + r2 * exp(j*theta2(index));
-%     R1 = Q + r3 * exp(j*theta3(index));
-%     R2 = S + r4 * exp(j*theta4(index));
-%     
-%     loop1 = [P Q R1 R2 S];
-%     
-%     figure(10)
-%     clf
-%     hold on
-%     plot(real(loop1),imag(loop1),'-o')
 
      B = A + r1*exp(1j*(theta1(index)));
      C = B + r2*exp(1j*theta2(index));
@@ -204,7 +187,7 @@ for m=1:length(index_vec)
 
          loop1 = [A B D A B C H];
          loop2 = [D I E D E G];
-         loop3 = [I J K H];
+         loop3 = [I J K F J K H];
     
     figure(10)
     clf
@@ -225,24 +208,6 @@ close(10)
 
 
 % *** plot figures ***
-
-if fig_kin_4bar
-    
-%     %plot assembly at a certain timestep 
-%     index = 1; %select 1st timestep
-%     P = 0;
-%     S = r1*exp(j*theta1);
-%     Q = P + r2 * exp(j*theta2(index));
-%     R = Q + r3 * exp(j*theta3(index));
-%     
-%     figure
-%     assembly=[P, Q, R, S];
-%     plot(real(assembly),imag(assembly),'ro-')
-%     xlabel('[m]')
-%     ylabel('[m]')
-%     title('assembly')
-%     axis equal
-
     
 % Position plot
     figure
