@@ -24,7 +24,7 @@ dynamics_4bar(theta2,theta3,theta4,dtheta2,dtheta3,dtheta4,ddtheta2,ddtheta3,ddt
 
 % cogi_P_x, cogn_P_y = vector from the centre of gravity of bar i to point P
 
-cog1_A = [r1*cos(theta1)+r5*cos()]
+%cog1_A = [r1*cos(theta1)+r5*cos()]
 
 
 % cog2_P_x = -X2*cos(theta2)-Y2*cos(theta2+pi/2);
