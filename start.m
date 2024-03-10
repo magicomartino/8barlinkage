@@ -20,7 +20,7 @@ close all
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % program data
-fig_kin_4bar = 1;        % draw figures of kinematic analysis if 1
+fig_kin_4bar = 0;       % draw figures of kinematic analysis if 1
 fig_dyn_4bar = 0;        % draw figures of dynamic analysis if 1
 
 % kinematic parameters (link lengths)
@@ -70,11 +70,11 @@ alpha5 = 0.4313;
 theta2_init = 0.52;
 theta3_init = 4.88;    % initial condition for first step of position analysis with fsolve (theta3 and theta4)
                      % VERY IMPORTANT because it determines which branch of the mechanism you're in
-theta6_init = 0;
-theta7_init = 0;
+theta6_init = 3.58;
+theta7_init = 0.78;
 
-theta10_init = 0;
-theta11_init = 0; 
+theta10_init = 5.58;
+theta11_init = 0.79; 
 
 t_begin = 0;                   % start time of simulation
 t_end = 10;                    % end time of simulation

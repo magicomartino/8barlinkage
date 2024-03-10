@@ -155,7 +155,7 @@ end % loop over positions
 
 A=0;
 H = r4*exp(j*alpha1);
-G = r8*exp(j*(-alpha2));
+G = -r8*exp(j*(pi + alpha2));
 
 % % define which positions we want as frames in our movie
 frames = 40;    % number of frames in movie
@@ -191,31 +191,30 @@ for m=1:length(index_vec)
 %     hold on
 %     plot(real(loop1),imag(loop1),'-o')
 
-     B = A + r1*exp(j*(theta1(index)));
-     C1 = B + r2*exp(j*theta2(index));
-     C2 = H - r3*exp(j*theta3(index));
+     B = A + r1*exp(1j*(theta1(index)));
+     C = B + r2*exp(1j*theta2(index));
 
-     D = A + r5*exp(j*(alpha3*theta1(index)));
-     E1 = D + r6*exp(j*theta6(index));
-     E2 = G-r7*exp(j*theta7(index));
+     D = A + r5*exp(1j*(alpha3+theta1(index)));
+     E = D + r6*exp(1j*theta6(index));
    
-     I = D + r9*exp(j*(theta6(index)-alpha4));
-     J = I + r10*exp(j*theta10(index));
-     K1 = J + r11*exp(j*theta11(index));
-     K2 = H - r12*exp(j*theta3(index));
-     F = K1 + r13*exp(j*(pi + theta11(index) +alpha5));
+     I = D + r9*exp(1j*(theta6(index)+alpha4));
+     J = I + r10*exp(1j*theta10(index));
+     K = J + r11*exp(1j*theta11(index));
+     F = K + r13*exp(1j*(pi + theta11(index) +alpha5));
 
-
-     loop1 = [A B D A B C1 C2 H ];
-%      loop2 = [A D E1 I D E1 E2 G];
-%      loop3 = [A D I J K1 F J K1 K2 H];
+         loop1 = [A B D A B C H];
+         loop2 = [D I E D E G];
+%        loop3 = [I J K1 H];
+         looptest = [I J K H];
     
     figure(10)
     clf
     hold on
-    plot(real(loop1),imag(loop1),'-o')
-%     plot(real(loop2),imag(loop2),'-o')
-%     plot(real(loop3),imag(loop3),'-o')
+        plot(real(loop1),imag(loop1),'-o')
+        plot(real(loop2),imag(loop2),'-o')
+%    plot(real(loop3),imag(loop3),'-o')
+
+       plot(real(looptest),imag(looptest),'-o')
     
     axis(movie_axes);     % set axes as in movie_axes
     Movie(m) = getframe;  % save frame to a variable Film
