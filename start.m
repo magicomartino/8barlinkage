@@ -66,6 +66,7 @@ alpha5 = 0.4313;
 % STEP 1. Determination of Kinematics
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%testcomment
 % position analysis
 theta2_init = 0.52;
 theta3_init = 4.88;    % initial condition for first step of position analysis with fsolve (theta3 and theta4)
