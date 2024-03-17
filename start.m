@@ -19,8 +19,8 @@ close all
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % program data
-fig_kin_4bar = 1;       % draw figures of kinematic analysis if 1
-fig_dyn_4bar = 0;        % draw figures of dynamic analysis if 1
+fig_kin_4bar = 0;       % draw figures of kinematic analysis if 1
+fig_dyn_4bar = 1;        % draw figures of dynamic analysis if 1
 
 % kinematic parameters (link lengths)
 r1 =2.2981;
