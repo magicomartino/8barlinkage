@@ -123,7 +123,7 @@ ddtheta1=omega^2*A*sin(omega*t);
 % STEP 3. Movie
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-figure
-load fourbar_movie Movie
-movie(Movie)
+% figure
+% load fourbar_movie Movie
+% movie(Movie)
 

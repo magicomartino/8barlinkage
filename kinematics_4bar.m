@@ -204,8 +204,8 @@ for m=1:length(index_vec)
 end
 % 
 % save movie
-save fourbar_movie Movie
-close(10)
+% save fourbar_movie Movie
+% close(10)
 
 
 % *** plot figures ***
