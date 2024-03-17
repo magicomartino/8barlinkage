@@ -202,10 +202,10 @@ for m=1:length(index_vec)
     axis(movie_axes);     % set axes as in movie_axes
     Movie(m) = getframe;  % save frame to a variable Film
 end
-% 
-% save movie
-% save fourbar_movie Movie
-% close(10)
+
+%save movie
+save fourbar_movie Movie
+close(10)
 
 
 % *** plot figures ***

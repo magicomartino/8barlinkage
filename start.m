@@ -19,8 +19,8 @@ close all
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % program data
-fig_kin_4bar = 0;       % draw figures of kinematic analysis if 1
-fig_dyn_4bar = 1;        % draw figures of dynamic analysis if 1
+fig_kin_4bar = 1;       % draw figures of kinematic analysis if 1
+fig_dyn_4bar = 0;        % draw figures of dynamic analysis if 1
 
 % kinematic parameters (link lengths)
 r1 =2.2981;
@@ -123,7 +123,7 @@ ddtheta1=omega^2*A*sin(omega*t);
 % STEP 3. Movie
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% figure
-% load fourbar_movie Movie
-% movie(Movie)
+ figure
+ load fourbar_movie Movie
+ movie(Movie)
 
