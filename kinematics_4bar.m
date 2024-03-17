@@ -144,6 +144,7 @@ for k=1:t_size
     
 end 
 
+if fig_kin_4bar == 1
 % *** create movie ***
 
 A=0;
@@ -321,6 +322,6 @@ close(10)
     
 
 end
-
+end
 
 
