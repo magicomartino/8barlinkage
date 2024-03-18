@@ -20,7 +20,7 @@ close all
 
 % program data
 fig_kin_4bar = 0;       % draw figures of kinematic analysis if 1
-fig_dyn_4bar = 1;        % draw figures of dynamic analysis if 1
+fig_dyn_4bar = 0;        % draw figures of dynamic analysis if 1
 
 % kinematic parameters (link lengths)
 r1 =2.2981;
@@ -83,11 +83,10 @@ alpha5 = 0.4313;
 % STEP 1. Determination of Kinematics
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%testcomment
 % position analysis
 theta2_init = 0.52;
-theta3_init = 4.88;    % initial condition for first step of position analysis with fsolve (theta3 and theta4)
-                       % VERY IMPORTANT because it determines which branch of the mechanism you're in
+theta3_init = 4.88;    
+
 theta6_init = 3.58;
 theta7_init = 0.78;
 
@@ -115,7 +114,7 @@ ddtheta1=omega^2*A*sin(omega*t);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % calculation of the dynamics (see dyn_4bar.m)
- [F_A_x,F_B_x,F_C_x,F_D_x,F_E_x,F_G_x,F_H_x,F_I_x,F_J_x,F_K_x,F_A_y,F_B_y,F_C_y,F_D_y,F_E_y,F_G_y,F_H_y,F_I_y,F_J_y,F_K_y,M_A] = dynamics_4bar(theta1,theta2,theta3,theta6,theta7,theta10,theta11,dtheta1,dtheta2,dtheta3,dtheta6,dtheta7,dtheta10,dtheta11,ddtheta1,ddtheta2,ddtheta3,ddtheta6,ddtheta7,ddtheta10,ddtheta11,r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13,alpha3,alpha4, ...
+ [omega1, omega2, omega3, omega6, omega7, omega10, omega11, alpha_1, alpha_2, alpha_3, alpha_6, alpha_7, alpha_10, alpha_11, vel_1, vel_2, vel_3, vel_4, vel_5, vel_6, vel_7, acc_1, acc_2, acc_3, acc_4, acc_5, acc_6, acc_7, F_A_x,F_B_x,F_C_x,F_D_x,F_E_x,F_G_x,F_H_x,F_I_x,F_J_x,F_K_x,F_A_y,F_B_y,F_C_y,F_D_y,F_E_y,F_G_y,F_H_y,F_I_y,F_J_y,F_K_y,M_A] = dynamics_4bar(theta1,theta2,theta3,theta6,theta7,theta10,theta11,dtheta1,dtheta2,dtheta3,dtheta6,dtheta7,dtheta10,dtheta11,ddtheta1,ddtheta2,ddtheta3,ddtheta6,ddtheta7,ddtheta10,ddtheta11,r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13,alpha3,alpha4, ...
                 m1,m2,m3,m4,m5,m6,m7,X1,X2,X3,X4,X5,X6,X7,Y1,Y2,Y3,Y4,Y5,Y6,Y7,J1,J2,J3,J4,J5,J6,J7,t,fig_dyn_4bar);
 
 
@@ -127,3 +126,8 @@ ddtheta1=omega^2*A*sin(omega*t);
  load fourbar_movie Movie
  movie(Movie)
 
+ %STEP 4. Control
+
+ [test] = control(m1, m2, m3, m4, m5, m6, m7, dtheta1, omega1, omega2, omega3, omega6, omega7, omega10, omega11, alpha_1, alpha_2, alpha_3, alpha_6, alpha_7, alpha_10, alpha_11, vel_1, vel_2, vel_3, vel_4, vel_5, vel_6, vel_7, acc_1, acc_2, acc_3, acc_4, acc_5, acc_6, acc_7);
+
+test
