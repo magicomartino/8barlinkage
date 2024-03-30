@@ -121,13 +121,12 @@ ddtheta1=omega^2*A*sin(omega*t);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % STEP 3. Movie
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
- figure
- load fourbar_movie Movie
- movie(Movie)
+% 
+%  figure
+%  load fourbar_movie Movie
+%  movie(Movie)
 
  %STEP 4. Control
 
- [test] = control(m1, m2, m3, m4, m5, m6, m7, dtheta1, omega1, omega2, omega3, omega6, omega7, omega10, omega11, alpha_1, alpha_2, alpha_3, alpha_6, alpha_7, alpha_10, alpha_11, vel_1, vel_2, vel_3, vel_4, vel_5, vel_6, vel_7, acc_1, acc_2, acc_3, acc_4, acc_5, acc_6, acc_7);
-
-test
+[output] = control(M_A, m1, m2, m3, m4, m5, m6, m7, J1, J2, J3, J4, J5, J6, J7,  dtheta1, dtheta2, dtheta3, dtheta6, dtheta7, dtheta10, dtheta11, ddtheta1, ddtheta2, ddtheta3, ddtheta6, ddtheta7, ddtheta10, ddtheta11, vel_1, vel_2, vel_3, vel_4, vel_5, vel_6, vel_7, acc_1, acc_2, acc_3, acc_4, acc_5, acc_6, acc_7, t);
+output

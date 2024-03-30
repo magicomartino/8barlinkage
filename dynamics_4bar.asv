@@ -116,7 +116,7 @@ acc_B = cross(omega1,cross(omega1,AB_vec    ))+cross(alpha_1,AB_vec    );
 acc_2 = acc_B+cross(omega2,cross(omega2,B_cog2_vec))+cross(alpha_2,B_cog2_vec);
 %ik denk dat acc_3 simpeler kan omdat die rond een vast punt draait
 %ook denk ik dat bij acc_C nog een sleepversnelling van b moet, niet zeker
-acc_C = acc_B + cross(omega2,cross(omega2,BC_vec    ))+cross(alpha_2,BC_vec);
+acc_C =   acc_B + cross(omega2,cross(omega2,BC_vec    ))+cross(alpha_2,BC_vec);
 acc_3 = acc_C+cross(omega3,cross(omega3,C_cog3_vec))+cross(alpha_3,C_cog3_vec);
 acc_D = cross(omega1,cross(omega1,AD_vec    ))+cross(alpha_1,AD_vec    );
 acc_6 = acc_D+cross(omega6,cross(omega6,D_cog6_vec))+cross(alpha_6,D_cog6_vec);
@@ -221,7 +221,8 @@ for k=1:t_size
          J4*ddtheta6(k);
          J5*ddtheta7(k);
          J6*ddtheta10(k);
-         J7*ddtheta11(k);];
+         J7*ddtheta11(k);
+        ];
 
     x = A\B;
 
