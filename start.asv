@@ -50,16 +50,16 @@ alpha5 = 0.4313;
  X1 = (0+r1+r5*cos(alpha3))/3;
  X2 = r2/2;               % X coordinates of cog (centre of gravity)
  X3 = (r3+r12)/2;
- X4 = (0 + r11 + r13*cos(2*pi - alpha5));
+ X4 = (0 + r11 + );
  X5 = r10/2;
  X6 = (0+r6+r9*cos(alpha4))/3;
  X7 = r7/2;
 
  %de r1 moet 0 zijn
- Y1 = (0+ 0+r5*sin(alpha3))/3;
+ Y1 = (0+r1+r5*sin(alpha3))/3;
  Y2 = 0;                  % Y coordinates of cog
  Y3 = 0;
- Y4 =(0+0+r13*sin(2*pi -alpha5))/3;
+ Y4 = 0;
  Y5 = 0;
  Y6 = (0+0+r9*sin(alpha4))/3;
  Y7 = 0;
