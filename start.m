@@ -50,7 +50,7 @@ alpha5 = 0.4313;
  X1 = (0+r1+r5*cos(alpha3))/3;
  X2 = r2/2;               % X coordinates of cog (centre of gravity)
  X3 = (r3+r12)/2;
- X4 = (0 + r11 + r13*cos(2*pi - alpha5));
+ X4 = (0 + r11 + r13*cos(2*pi - alpha5))/3;
  X5 = r10/2;
  X6 = (0+r6+r9*cos(alpha4))/3;
  X7 = r7/2;
@@ -69,20 +69,20 @@ alpha5 = 0.4313;
 
  dens = 1.5;
 
- m1 = (r1*r5*sin(alpha3))/2 * dens ;
+ m1 = (r1+r5+r14)* dens ;
  m2 = r2*dens;
  m3 = (r3+r12)*dens;
- m4 = (r11 + r13*sin(2*pi -alpha5))/2 * dens;
+ m4 = (r11 +r16 + r13) * dens;
  m5 = r10*dens;
- m6 = (r6+r9*sin(alpha4))*dens;
+ m6 = (r6+r9+r15)*dens;
  m7 = r7*dens;
 
- J1 = r1 * (r5*sin(alpha3)^3)/36;
+ J1 = 20;
  J2 = m2*(r2^2)/12;
  J3 = m3*(r3^2)/12;
- J4 = r4^2/12;
+ J4 = 20;
  J5 = m5*(r5^2)/12;
- J6 = ;
+ J6 = 20;
  J7 = m7*(r7^2)/12;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

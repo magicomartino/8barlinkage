@@ -24,40 +24,40 @@ dynamics_4bar(theta1,theta2,theta3,theta6,theta7,theta10,theta11,dtheta1,dtheta2
 
 % cogi_P_x, cogn_P_y = vector from the centre of gravity of bar i to point P
 
-cog1_A_x = -X1*cos(theta1)-Y2*cos(theta1+pi/2);
-cog1_A_y = -X1*sin(theta1)-Y2*sin(theta1+pi/2);
-cog1_B_x = (r1-X1)*cos(theta1)-Y1*cos(theta1+pi/2);
-cog1_B_y = (r1-X1)*sin(theta1)-Y1*sin(theta1+pi/2);
-cog1_D_x = (r5*cos(alpha3)-X1)*cos(theta1)+(r5*sin(alpha3)-Y1)*cos(theta1+pi/2);
-cog1_D_y = (r5*cos(alpha3)-X1)*sin(theta1)+(r5*sin(alpha3)-Y1)*sin(theta1+pi/2);
-cog2_B_x = -X2*cos(theta2)-Y2*cos(theta2+pi/2);
-cog2_B_y = -X2*sin(theta2)-Y2*sin(theta2+pi/2);
-cog2_C_x = (r2-X2)*cos(theta2)-Y2*cos(theta2+pi/2);
-cog2_C_y = (r2-X2)*sin(theta2)-Y2*sin(theta2+pi/2);
-cog3_H_x = -X3*cos(theta3)-Y3*cos(theta3+pi/2);
-cog3_H_y = -X3*sin(theta3)-Y3*sin(theta3+pi/2);
-cog3_C_x = (-r3-X3)*cos(theta3)-Y3*cos(theta3+pi/2);
-cog3_C_y = (-r3-X3)*sin(theta3)-Y3*sin(theta3+pi/2);
-cog3_K_x = (r12-X3)*cos(theta3)-Y3*cos(theta3+pi/2);
-cog3_K_y = (r12-X3)*sin(theta3)-Y3*sin(theta3+pi/2);
-cog4_J_x = -X4*cos(theta11)-Y4*cos(theta11+pi/2);
-cog4_J_y = -X4*sin(theta11)-Y4*sin(theta11+pi/2);
-cog4_K_x = (r11-X4)*cos(theta11)-Y4*cos(theta11+pi/2);
-cog4_K_y = (r11-X4)*sin(theta11)-Y4*sin(theta11+pi/2);
-cog5_I_x = -X5*cos(theta10)-Y5*cos(theta10+pi/2);
-cog5_I_y = -X5*sin(theta10)-Y5*sin(theta10+pi/2);
-cog5_J_x = (r10-X5)*cos(theta10)-Y5*cos(theta10+pi/2);
-cog5_J_y = (r10-X5)*sin(theta10)-Y5*sin(theta10+pi/2);
-cog6_D_x = -X6*cos(theta6)-Y6*cos(theta6+pi/2);
-cog6_D_y = -X6*sin(theta6)-Y6*sin(theta6+pi/2);
-cog6_E_x = (r6-X6)*cos(theta6)-Y6*cos(theta6+pi/2);
-cog6_E_y = (r6-X6)*sin(theta6)-Y6*sin(theta6+pi/2);
-cog6_I_x = (r9*cos(alpha4)-X6)*cos(theta6)+(r9*sin(alpha4)-Y6)*cos(theta6+pi/2);
-cog6_I_y = (r9*cos(alpha4)-X6)*sin(theta6)+(r9*sin(alpha4)-Y6)*sin(theta6+pi/2);
-cog7_E_x = -X7*cos(theta7)-Y7*cos(theta7+pi/2);
-cog7_E_y = -X7*sin(theta7)-Y7*sin(theta7+pi/2);
-cog7_G_x = (r7-X7)*cos(theta7)-Y7*cos(theta7+pi/2);
-cog7_G_y = (r7-X7)*sin(theta7)-Y7*sin(theta7+pi/2);
+cog1_A_x = -X1*cos(theta1)+Y1*sin(theta1);
+cog1_A_y = -X1*sin(theta1)-Y1*cos(theta1);
+cog1_B_x = (r1-X1)*cos(theta1)+Y1*sin(theta1);
+cog1_B_y = (r1-X1)*sin(theta1)-Y1*cos(theta1);
+cog1_D_x = (r5*cos(alpha3)-X1)*cos(theta1)+(r5*sin(alpha3)-Y1)*(-sin(theta1));
+cog1_D_y = (r5*cos(alpha3)-X1)*sin(theta1)+(r5*sin(alpha3)-Y1)*cos(theta1);
+cog2_B_x = -X2*cos(theta2)+ Y2*sin(theta2);
+cog2_B_y = -X2*sin(theta2)-Y2*cos(theta2);
+cog2_C_x = (r2-X2)*cos(theta2)+Y2*sin(theta2);
+cog2_C_y = (r2-X2)*sin(theta2)-Y2*cos(theta2);
+cog3_C_x = -X3*cos(theta3)+Y3*sin(theta3);
+cog3_C_y = -X3*sin(theta3)-Y3*cos(theta3);
+cog3_H_x = (r3-X3)*cos(theta3)+Y3*sin(theta3);
+cog3_H_y = (r3-X3)*sin(theta3)-Y3*cos(theta3);
+cog3_K_x = (r3+r12-X3)*cos(theta3)+Y3*sin(theta3);
+cog3_K_y = (r3+r12-X3)*sin(theta3)-Y3*cos(theta3);
+cog4_J_x = -X4*cos(theta11)+Y4*sin(theta11);
+cog4_J_y = -X4*sin(theta11)-Y4*cos(theta11);
+cog4_K_x = (r11-X4)*cos(theta11)+Y4*sin(theta11);
+cog4_K_y = (r11-X4)*sin(theta11)-Y4*cos(theta11);
+cog5_I_x = -X5*cos(theta10)+Y5*sin(theta10);
+cog5_I_y = -X5*sin(theta10)-Y5*cos(theta10);
+cog5_J_x = (r10-X5)*cos(theta10)+Y5*sin(theta10);
+cog5_J_y = (r10-X5)*sin(theta10)-Y5*cos(theta10);
+cog6_D_x = -X6*cos(theta6)+Y6*sin(theta6);
+cog6_D_y = -X6*sin(theta6)-Y6*cos(theta6);
+cog6_E_x = (r6-X6)*cos(theta6)+Y6*sin(theta6);
+cog6_E_y = (r6-X6)*sin(theta6)-Y6*cos(theta6);
+cog6_I_x = (r9*cos(alpha4)-X6)*cos(theta6)+(r9*sin(alpha4)-Y6)*-sin(theta6);
+cog6_I_y = (r9*cos(alpha4)-X6)*sin(theta6)+(r9*sin(alpha4)-Y6)*cos(theta6);
+cog7_E_x = -X7*cos(theta7)+Y7*sin(theta7);
+cog7_E_y = -X7*sin(theta7)-Y7*cos(theta7);
+cog7_G_x = (r7-X7)*cos(theta7)-Y7*sin(theta7);
+cog7_G_y = (r7-X7)*sin(theta7)-Y7*cos(theta7);
 
 % 3D omega (dtheta) and alpha (ddtheta) vectors)
 omega1 = [zeros(size(theta2)) zeros(size(theta2)) dtheta1];
@@ -192,11 +192,10 @@ for k=1:t_size
          0            0           0            0            0            0            0            0            1           0            1            0           0            0           0            0            0            0            0           0            0;%Link 7 x
          0            0           0            0            0            0            0            0            0           1            0            1           0            0           0            0            0            0            0           0            0;%Link 7 y
 
-
-         cog1_A_y(k) cog1_A_x(k) -cog1_B_y(k) cog1_B_x(k)  0            0            cog1_D_y(k) -cog1_D_x(k)   0           0            0            0           0            0           0            0            0            0            0           0            1;%Moment 1 
-         0            0           cog2_B_y(k)  -cog2_B_x(k) -cog2_C_y(k) cog2_C_x(k)  0            0            0           0            0            0           0            0           0            0            0            0            0           0            0;%Moment 2
-         0            0           0            0           -cog3_C_y(k)  -cog3_C_x(k) 0            0            0           0            0            0        -cog3_H_y(k) -cog3_H_x(k)   0            0            0            0         cog3_K_y(k)  cog3_K_x(k)    0;%Moment 3
-         0            0           0            0            0            0            0            0            0           0            0            0           0            0           0            0        -cog4_J_y(k)  -cog4_J_x(k) -cog4_K_y(k)  cog4_K_x(k)   0;%Moment 4
+      cog1_A_y(k)  cog1_A_x(k) -cog1_B_y(k)  cog1_B_x(k)    0            0         cog1_D_y(k) -cog1_D_x(k)     0           0            0            0           0            0           0            0            0            0            0           0            1;%Moment 1 
+         0            0       cog2_B_y(k)  -cog2_B_x(k) -cog2_C_y(k)   cog2_C_x(k)    0            0            0           0            0            0           0            0           0            0            0            0            0           0            0;%Moment 2
+         0            0           0            0        -cog3_C_y(k)  -cog3_C_x(k)    0            0            0           0            0            0        -cog3_H_y(k) -cog3_H_x(k)   0            0            0            0         cog3_K_y(k)  cog3_K_x(k)    0;%Moment 3
+         0            0           0            0            0            0            0            0            0           0            0            0           0            0           0            0        -cog4_J_y(k) -cog4_J_x(k) -cog4_K_y(k)  cog4_K_x(k)    0;%Moment 4
          0            0           0            0            0            0            0            0            0           0            0            0           0            0       -cog5_I_y(k)  -cog5_I_x(k) cog5_J_y(k) cog5_J_x(k)      0           0            0;%Moment 5
          0            0           0            0            0            0       -cog6_D_y(k) -cog6_D_x(k)  -cog6_E_y(k)   cog6_E_x(k)   0            0           0            0        cog6_I_y(k)   cog6_I_x(k)    0            0            0           0            0;%Moment 6
          0            0           0            0            0            0            0            0      cog7_E_y(k)   -cog7_E_x(k)  -cog7_G_y(k)  cog7_G_x(k)   0            0           0            0            0            0            0           0            0;%Moment 7
