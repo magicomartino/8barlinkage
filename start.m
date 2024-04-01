@@ -20,7 +20,7 @@ close all
 
 % program data
 fig_kin_4bar = 0;       % draw figures of kinematic analysis if 1
-fig_dyn_4bar = 0;        % draw figures of dynamic analysis if 1
+fig_dyn_4bar = 1;        % draw figures of dynamic analysis if 1
 
 % kinematic parameters (link lengths)
 r1 =2.2981;
@@ -78,12 +78,12 @@ alpha5 = 0.4313;
  m7 = r7*dens;
 
  J1 = r1 * (r5*sin(alpha3)^3)/36;
- J2 = (r2^2)/12;
- J3 = (r3^2)/12;
+ J2 = m2*(r2^2)/12;
+ J3 = m3*(r3^2)/12;
  J4 = r4^2/12;
- J5 = (r5^2)/12;
- J6 = (m6/36)*(r6^2+r9^2+r15^2);
- J7 = (r7^2)/12;
+ J5 = m5*(r5^2)/12;
+ J6 = ;
+ J7 = m7*(r7^2)/12;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % STEP 1. Determination of Kinematics
