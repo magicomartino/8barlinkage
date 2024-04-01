@@ -28,6 +28,7 @@ cog1_A_x = -X1*cos(theta1)+Y1*sin(theta1);
 cog1_A_y = -X1*sin(theta1)-Y1*cos(theta1);
 cog1_B_x = (r1-X1)*cos(theta1)+Y1*sin(theta1);
 cog1_B_y = (r1-X1)*sin(theta1)-Y1*cos(theta1);
+
 cog1_D_x = (r5*cos(alpha3)-X1)*cos(theta1)+(r5*sin(alpha3)-Y1)*(-sin(theta1));
 cog1_D_y = (r5*cos(alpha3)-X1)*sin(theta1)+(r5*sin(alpha3)-Y1)*cos(theta1);
 cog2_B_x = -X2*cos(theta2)+ Y2*sin(theta2);
@@ -192,13 +193,13 @@ for k=1:t_size
          0            0           0            0            0            0            0            0            1           0            1            0           0            0           0            0            0            0            0           0            0;%Link 7 x
          0            0           0            0            0            0            0            0            0           1            0            1           0            0           0            0            0            0            0           0            0;%Link 7 y
 
-      -cog1_A_y(k)  cog1_A_x(k) -cog1_B_y(k)  cog1_B_x(k)    0            0         -cog1_D_y(k) cog1_D_x(k)    0           0            0            0           0            0           0            0            0            0            0           0            1;%Moment 1 
-         0            0       -cog2_B_y(k)  cog2_B_x(k) -cog2_C_y(k)   cog2_C_x(k)    0            0            0           0            0            0           0            0           0            0            0            0            0           0            0;%Moment 2
-         0            0           0            0        -cog3_C_y(k)   cog3_C_x(k)    0            0            0           0            0            0        -cog3_H_y(k)  cog3_H_x(k)   0            0            0            0         -cog3_K_y(k)  cog3_K_x(k)   0;%Moment 3
-         0            0           0            0            0            0            0            0            0           0            0            0           0            0           0            0        -cog4_J_y(k) cog4_J_x(k)  -cog4_K_y(k)  cog4_K_x(k)    0;%Moment 4
-         0            0           0            0            0            0            0            0            0           0            0            0           0            0       -cog5_I_y(k)   cog5_I_x(k) -cog5_J_y(k) cog5_J_x(k)     0           0            0;%Moment 5
-         0            0           0            0            0            0       -cog6_D_y(k)  cog6_D_x(k)  -cog6_E_y(k)   cog6_E_x(k)   0            0           0            0       -cog6_I_y(k)   cog6_I_x(k)    0            0            0           0            0;%Moment 6
-         0            0           0            0            0            0            0            0     -cog7_E_y(k)    cog7_E_x(k)  -cog7_G_y(k)  cog7_G_x(k)   0            0           0            0            0            0            0           0            0;%Moment 7
+      -cog1_A_y(k) cog1_A_x(k) -cog1_B_y(k) cog1_B_x(k)     0            0         -cog1_D_y(k) cog1_D_x(k)     0           0            0            0           0            0           0            0            0            0            0           0            1;%Moment 1 
+         0            0         cog2_B_y(k)  -cog2_B_x(k) -cog2_C_y(k) cog2_C_x(k)    0            0            0           0            0            0           0            0           0            0            0            0            0           0            0;%Moment 2
+         0            0           0            0         cog3_C_y(k)  -cog3_C_x(k)    0            0            0           0            0            0        -cog3_H_y(k) cog3_H_x(k)    0            0            0            0          cog3_K_y(k) -cog3_K_x(k)   0;%Moment 3
+         0            0           0            0            0            0            0            0            0           0            0            0           0            0           0            0         cog4_J_y(k)   -cog4_J_x(k) -cog4_K_y(k) cog4_K_x(k)   0;%Moment 4
+         0            0           0            0            0            0            0            0            0           0            0            0           0            0         cog5_I_y(k)  -cog5_I_x(k) -cog5_J_y(k) cog5_J_x(k)    0           0            0;%Moment 5
+         0            0           0            0            0            0        cog6_D_y(k)  -cog6_D_x(k) cog6_E_y(k)   -cog6_E_x(k)   0            0           0            0         -cog6_I_y(k) cog6_I_x(k)    0            0            0           0            0;%Moment 6
+         0            0           0            0            0            0            0            0       -cog7_E_y(k)   cog7_E_x(k) -cog7_G_y(k) cog7_G_x(k)    0            0           0            0            0            0            0           0            0;%Moment 7
         ];
 
 
