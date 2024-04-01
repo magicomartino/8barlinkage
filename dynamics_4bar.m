@@ -123,7 +123,7 @@ acc_6 = acc_D+cross(omega6,cross(omega6,D_cog6_vec))+cross(alpha_6,D_cog6_vec);
 acc_E =   acc_D +   cross(omega6,cross(omega6,DE_vec    ))+cross(alpha_6,DE_vec    );
 %ook vastpunt dus kan ook simpeler
 acc_7 = acc_E+ cross(omega7,cross(omega7,E_cog7_vec))+cross(alpha_7,E_cog7_vec);
-acc_I = acc_D +  cross(omega6,cross(omega6,DI_vec    ))+cross(alpha_6,DI_vec    );
+acc_I = acc_D + cross(omega6,cross(omega6,DI_vec    ))+cross(alpha_6,DI_vec    );
 acc_5 = acc_I+ cross(omega10,cross(omega10,I_cog5_vec))+cross(alpha_10,I_cog5_vec);
 % Hier moet volgens mij IJ_vec staan
 acc_J = acc_I +  cross(omega10,cross(omega10,IJ_vec    ))+cross(alpha_10,IJ_vec);
@@ -176,7 +176,7 @@ M_A = zeros(size(theta2));
 % calculate dynamics for each time step
 t_size = size(t,1);    % number of simulation steps
 for k=1:t_size
-
+   %    F_A_x       F_A_y       F_B_x        F_B_y        F_C_x        F_C_y        F_D_x        F_D_y        F_E_x       F_E_y        F_G_x        F_G_y       F_H_x        F_H_y       F_I_x        F_I_y        F_J_x        F_J_y        F_K_x        F_K_y        M_A 
     A = [1            0           1            0            0            0            1            0            0           0            0            0           0            0           0            0            0            0            0           0            0;%Link 1 x
          0            1           0            1            0            0            0            1            0           0            0            0           0            0           0            0            0            0            0           0            0;%Link 1 y
          0            0          -1            0            1            0            0            0            0           0            0            0           0            0           0            0            0            0            0           0            0;%Link 2 x
