@@ -93,8 +93,7 @@ AB_vec = [r1*cos(theta1)        r1*sin(theta1)        zeros(size(theta2))];
 BC_vec = [r2*cos(theta2)        r2*sin(theta2)        zeros(size(theta2))];
 AD_vec = [r5*cos(theta1+alpha3) r5*sin(theta1+alpha3) zeros(size(theta2))];
 DE_vec = [r6*cos(theta6)        r6*sin(theta6)        zeros(size(theta2))];
-%hier kan een aanpassing gebeuren
-DI_vec = [r9*cos(theta6-alpha4) r9*sin(theta6-alpha4) zeros(size(theta2))];
+DI_vec = [r9*cos(theta6+alpha4) r9*sin(theta6+alpha4) zeros(size(theta2))];
 IJ_vec = [r10*cos(theta10)      r10*sin(theta10)      zeros(size(theta2))];
 
 %velocity vectors
@@ -115,18 +114,14 @@ vel_4 = vel_J + cross(omega11, J_cog4_vec);
 acc_1 = cross(omega1,cross(omega1,A_cog1_vec))+cross(alpha_1,A_cog1_vec);
 acc_B = cross(omega1,cross(omega1,AB_vec    ))+cross(alpha_1,AB_vec    );
 acc_2 = acc_B+cross(omega2,cross(omega2,B_cog2_vec))+cross(alpha_2,B_cog2_vec);
-%ik denk dat acc_3 simpeler kan omdat die rond een vast punt draait
-%ook denk ik dat bij acc_C nog een sleepversnelling van b moet, niet zeker
 acc_C = acc_B + cross(omega2,cross(omega2,BC_vec    ))+cross(alpha_2,BC_vec);
 acc_3 = acc_C+cross(omega3,cross(omega3,C_cog3_vec))+cross(alpha_3,C_cog3_vec);
 acc_D = cross(omega1,cross(omega1,AD_vec    ))+cross(alpha_1,AD_vec    );
 acc_6 = acc_D+cross(omega6,cross(omega6,D_cog6_vec))+cross(alpha_6,D_cog6_vec);
-acc_E =   acc_D +   cross(omega6,cross(omega6,DE_vec    ))+cross(alpha_6,DE_vec    );
-%ook vastpunt dus kan ook simpeler
+acc_E = acc_D + cross(omega6,cross(omega6,DE_vec    ))+cross(alpha_6,DE_vec    );
 acc_7 = acc_E+ cross(omega7,cross(omega7,E_cog7_vec))+cross(alpha_7,E_cog7_vec);
 acc_I = acc_D + cross(omega6,cross(omega6,DI_vec    ))+cross(alpha_6,DI_vec    );
 acc_5 = acc_I+ cross(omega10,cross(omega10,I_cog5_vec))+cross(alpha_10,I_cog5_vec);
-% Hier moet volgens mij IJ_vec staan
 acc_J = acc_I +  cross(omega10,cross(omega10,IJ_vec    ))+cross(alpha_10,IJ_vec);
 acc_4 = acc_J+cross(omega11,cross(omega11,J_cog4_vec))+cross(alpha_11,J_cog4_vec);
 
@@ -220,10 +215,10 @@ for k=1:t_size
          J1*ddtheta1(k);
          J2*ddtheta2(k);
          J3*ddtheta3(k);
-         J4*ddtheta6(k);
-         J5*ddtheta7(k);
-         J6*ddtheta10(k);
-         J7*ddtheta11(k);];
+         J4*ddtheta11(k);
+         J5*ddtheta10(k);
+         J6*ddtheta6(k);
+         J7*ddtheta7(k);];
 
     x = A\B;
 

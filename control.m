@@ -43,7 +43,12 @@ output(k) = (m1*(vel_1x(k)*acc_1x(k) + vel_1y(k)*acc_1y(k)) + J1*(dtheta1(k) * d
             m4*(vel_4x(k)*acc_4x(k) + vel_4y(k)*acc_4y(k)) + J4*(dtheta11(k) * ddtheta11(k)) + ...
             m5*(vel_5x(k)*acc_5x(k) + vel_5y(k)*acc_5y(k)) + J5*(dtheta10(k) * ddtheta10(k)) + ...
             m6*(vel_6x(k)*acc_6x(k) + vel_6y(k)*acc_6y(k)) + J6*(dtheta6(k) * ddtheta6(k)) + ...
-            m7*(vel_7x(k)*acc_7x(k) + vel_7y(k)*acc_7y(k)) + J7*(dtheta7(k) * ddtheta7(k))) -M_A(k)*dtheta1(k) ;
+            m7*(vel_7x(k)*acc_7x(k) + vel_7y(k)*acc_7y(k)) + J7*(dtheta7(k) * ddtheta7(k))) -M_A(k)*dtheta1(k);
 
 end
+
+    figure
+    plot(t,output)
+    ylabel('output')
+    xlabel('t [s]')
 

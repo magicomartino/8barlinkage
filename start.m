@@ -67,47 +67,25 @@ alpha5 = 0.4313;
  % materiaal, dus dezelfde massadichtheid
  % oppervlakte van een driehoek = b*h/2
 
- dens = 0.8;
+ dens = 20;
+ thickness = 0.05; %thickness of triangles
 
- m1 = (r1+r5+r14)* dens ;
- m2 = r2*dens;
- m3 = (r3+r12)*dens;
- m4 = (r11 +r16 + r13) * dens;
- m5 = r10*dens;
- m6 = (r6+r9+r15)*dens;
- m7 = r7*dens;
+ m1 = dens*thickness*r14*r1*sind(65.7744)/2  ;
+ m2 = r2*thickness*dens;
+ m3 = (r3+r12)*thickness*dens;
+ m4 =  dens * thickness * r13*r11*sin(alpha5)/2;
+ m5 = r10* thickness* dens;
+ m6 = dens*thickness* r6*r15*sin(-alpha4)/2;
+ m7 = r7*thickness*dens;
 
- midpoint_AD = (r5/2)*[cos(alpha3) sin(alpha3)];
- AD_angle = acos((r5*cos(alpha3)-r1)/r14);
- midpoint_BD = [r1+(r14/2)*cos(AD_angle) (r14/2)*sin(AD_angle)];
- J1_AB = (dens*r1)*(r1^2)/12 + (dens*r1)*(Y1^2);
- J1_AD = (dens*r5)*(r5^2)/12 + (dens*r5)* norm([X1 Y1] - midpoint_AD)^2;
- J1_BD = (dens*r14)*(r14^2)/12 + (dens*r14)* norm([X1 Y1] - midpoint_BD)^2;
  
- %Dit is aangenomen dat er geen vulling is in de driehoeken, en er is nog
- %een klein foutje met de afstand tussen de as en de COGs
- J1 = J1_AD + J1_AB + J1_BD;
+
+ J1 = mom_of_inertia(r1*cosd(65.77441), r14, r1*sind(65.77441), thickness, dens);
  J2 = m2*(r2^2)/12;
  J3 = m3*(r3^2)/12;
-
- midpoint_KF = [r11+r13*cos(2*pi-alpha5) r13*sin(2*pi-alpha5)];
- JF_angle = asin((r13/r16)*sin(2*pi-alpha5));
- midpoint_JF = (r16/2) * [cos(JF_angle) sin(JF_angle)];
-
- J4_JK = (dens*r11)*(r11^2)/12 + (dens*r11)*(Y4^2);
- J4_KF = (dens*r13)*(r13^2)/12 + (dens*r13)*norm([X4 Y4]-midpoint_KF)^2;
- J4_JF = (dens*r16)*(r16^2)/12 + (dens*r16)*norm([X4 Y4]-midpoint_JF)^2;
- 
- J4 = J4_JK + J4_KF + J4_JF;
+ J4 = mom_of_inertia(r13-r11*cos(alpha5), r13, r11*sin(alpha5), thickness, dens);
  J5 = m5*(r5^2)/12;
-
- midpoint_DI = r9/2 * [cos(alpha4) sin(alpha4)];
- EI_angle = asin((r9/r15)*sin(alpha4));
- midpoint_EI = [r6 + (r15/2)* cos(EI_angle) r15*sin(EI_angle)];
- J6_DE = (dens*r6)*(r6^2)/12 + (dens*r6)*Y6^2;
- J6_DI = (dens*r9)*(r9^2)/12 + (dens*r9)*norm([X6 Y6]-midpoint_DI);
- J6_EI = (dens*r15)*(r15^2)/12 + (dens*r15)*norm([X6 Y6] - midpoint_EI);
- J6 = J6_DE + J6_DI + J6_EI;
+ J6 = mom_of_inertia(r6-r15*cos(alpha4), r6, r15*sin(-alpha4), thickness, dens);
  J7 = m7*(r7^2)/12;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -159,6 +137,3 @@ ddtheta1=omega^2*A*sin(omega*t);
 
  %STEP 4. Control
 
-[output] = control(M_A, m1, m2, m3, m4, m5, m6, m7, J1, J2, J3, J4, J5, J6, J7, dtheta1, dtheta2, dtheta3, dtheta6, dtheta7, dtheta10, dtheta11, ddtheta1, ddtheta2, ddtheta3, ddtheta6, ddtheta7, ddtheta10, ddtheta11, vel_1, vel_2, vel_3, vel_4, vel_5, vel_6, vel_7, acc_1, acc_2, acc_3, acc_4, acc_5, acc_6, acc_7, t);
-
-output
