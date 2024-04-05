@@ -63,6 +63,8 @@ error(k) =  (m1*(vel_1x(k)*acc_1x(k) + vel_1y(k)*acc_1y(k)) + J1*(dtheta1(k) * d
             m6*(vel_6x(k)*acc_6x(k) + vel_6y(k)*acc_6y(k)) + J6*(dtheta6(k) * ddtheta6(k)) + ...
             m7*(vel_7x(k)*acc_7x(k) + vel_7y(k)*acc_7y(k)) + J7*(dtheta7(k) * ddtheta7(k))) - M_A(k)*dtheta1(k);
 
+
+
 end
 
 
