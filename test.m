@@ -22,3 +22,20 @@ alpha4 = -0.2032;
 alpha5 = 0.4313;
 
 r13*sin(2*pi - alpha5)
+
+vel_1_norm = sqrt(vel_1(:,1).^2+vel_1(:,2).^2);
+vel_2_norm = sqrt(vel_2(:,1).^2+vel_2(:,2).^2);
+vel_3_norm = sqrt(vel_3(:,1).^2+vel_3(:,2).^2);
+vel_4_norm = sqrt(vel_4(:,1).^2+vel_4(:,2).^2);
+vel_5_norm = sqrt(vel_5(:,1).^2+vel_5(:,2).^2);
+vel_6_norm = sqrt(vel_6(:,1).^2+vel_6(:,2).^2);
+vel_7_norm = sqrt(vel_7(:,1).^2+vel_7(:,2).^2);
+
+
+acc_1_norm = sqrt(acc_1(:,1).^2+acc_1(:,2).^2);
+acc_2_norm = sqrt(acc_2(:,1).^2+acc_2(:,2).^2);
+acc_3_norm = sqrt(acc_3(:,1).^2+acc_3(:,2).^2);
+acc_4_norm = sqrt(acc_4(:,1).^2+acc_4(:,2).^2);
+acc_5_norm = sqrt(acc_5(:,1).^2+acc_5(:,2).^2);
+acc_6_norm = sqrt(acc_6(:,1).^2+acc_6(:,2).^2);
+acc_7_norm = sqrt(acc_7(:,1).^2+acc_7(:,2).^2);
