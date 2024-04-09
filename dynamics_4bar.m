@@ -168,6 +168,8 @@ acc_6y = acc_6(:,2);
 acc_7x = acc_7(:,1);
 acc_7y = acc_7(:,2);
 
+g = 9.81;
+
 % **********************
 % *** force analysis ***
 % **********************
@@ -227,19 +229,19 @@ for k=1:t_size
 
 
     B = [m1*acc_1x(k);
-         m1*acc_1y(k);
+         m1*(acc_1y(k)+g);
          m2*acc_2x(k);
-         m2*acc_2y(k);
+         m2*(acc_2y(k)+g);
          m3*acc_3x(k);
-         m3*acc_3y(k);
+         m3*(acc_3y(k)+g);
          m4*acc_4x(k);
-         m4*acc_4y(k);
+         m4*(acc_4y(k)+g);
          m5*acc_5x(k);
-         m5*acc_5y(k);
+         m5*(acc_5y(k)+g);
          m6*acc_6x(k);
-         m6*acc_6y(k);
+         m6*(acc_6y(k)+g);
          m7*acc_7x(k);
-         m7*acc_7y(k);
+         m7*(acc_7y(k)+g);
          J1*ddtheta1(k);
          J2*ddtheta2(k);
          J3*ddtheta3(k);
